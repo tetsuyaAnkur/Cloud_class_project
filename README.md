@@ -1,10 +1,10 @@
 # Cloud_class_project
 
 # Made By -
-Ankur(01FB15ECS043)
-Nikhil Anand(01FB15ECS186)
-Karthik Bhat(01FB15ECS140)
-Rajat Nigam(01FB15ECS228)
+1) Ankur(01FB15ECS043)
+2) Nikhil Anand(01FB15ECS186)
+3) Karthik Bhat(01FB15ECS140)
+4) Rajat Nigam(01FB15ECS228)
 
 # About
 This repository contains an implementation of Container based PaaS application named Bookarts where users can search and upload books and images.
