@@ -1,0 +1,40 @@
+/* connecting to mysql */
+mysql -u root -p
+
+/* creating book_karts DB */
+create database book_karts;
+
+/* displaying all the databases */
+show databases;
+
+/* selecting book_karts DB */
+use book_karts;
+
+/* creating books table in book_karts DB */
+create table books (ISBN_NO integer, TITLE varchar(100), AUTHOR varchar(100), PRICE float, PRIMARY KEY(ISBN_NO));
+
+/* creating photos table in book_karts DB */
+create table photos (Username varchar(100), Password varchar(100), Filename varchar(100), Pathname varchar(100), PRIMARY KEY (Username,Password,Filename));
+
+/* displaying all the tables in book_karts DB */
+show tables;
+
+/* inserting data into books table */
+insert into books values(222, "Moving to Cloud", "Dinkar", 310.23);
+insert into books values(6766, "Organic Chemistry", "MS Chauhan", 380.00);
+insert into books values(15505, "Concepts of Physics - 2", "H.C. Verma", 255.00);
+
+/* inserting data into photos table */
+insert into photos values("admin", "admin", "cloud_book.jpg", "/home/ubuntu/public/");
+insert into photos values("student", "studies", "chauhan2.jpg", "/home/ubuntu/public/");
+insert into photos values("student2", "physics", "hc_verma.jpg", "/home/ubuntu/public/");
+
+/* creating users */
+create user 'admin'@'backend_container_ip' identified by 'admin';
+create user 'student'@'backend_container_ip' identified by 'student';
+
+/* granting privileges */
+grant all privileges on book_karts.* to 'admin'@'backend_container_ip';
+grant select on book_karts.books to 'student'@'backen_container_ip';
+grant all select, insert, delete on book_karts.photos to 'student'@'backend_container_ip';
+
